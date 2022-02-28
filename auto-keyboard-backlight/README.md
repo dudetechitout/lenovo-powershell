@@ -49,4 +49,4 @@ To schedule with Task Scheduler for lock:
 5. Add an action with '**Program/script**' location set to '**C:\Windows\syswow64\WindowsPowerShell\v1.0\powershell.exe**' and parameters '**-File path\to\script\auto-keyboard-backlight.ps1 true**'
 
 ## Note
-You may need to either adjust the Powershell execution policies or sign the Powershell script if you plan on safely deploying this in your company. Find out more: [ThinkPads & The Keyboard Backlight](https://selfo.io/posts/linux-increase-swapfile.html)
+You may need to either adjust the Powershell execution policies or sign the Powershell script if you plan on safely deploying this in your company. Find out more: [ThinkPads & The Keyboard Backlight](https://selfo.io/posts/thinkPads-and-the-keyboard-backlight.html)
