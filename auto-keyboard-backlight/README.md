@@ -8,7 +8,7 @@ Enables or disables the keyboard backlight
 - Run script with Powershell 32-bit (x86) located '**C:\Windows\syswow64\WindowsPowerShell\v1.0\powershell.exe**'
 
 ## Installation
-The script has a storage file it needs to read and write. The location path is hardcoded to the user's documents folder in the 'scripts' directory, you can change it or just place this script in your '**Documents**' directory in the directory '**scripts**' by running this command in CMD or Win+R '**
+The script has a storage file it needs to read and write. The location path is hardcoded to the user's documents folder in the 'scripts' directory, you can change it or just place this script in your '**Documents**' directory within the '**scripts**' directory.
 
 If you want to schedule the script, we'll need to do this with task scheduler. This will cover:
 - Boot
