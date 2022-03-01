@@ -1,7 +1,7 @@
 try {
 
 	[string]$cur_user = $env:UserName
-  
+
 	if (!(Test-Path "C:\Users\$cur_user\Documents\scripts\storage.ini")) {
 	   New-Item -Path "C:\Users\$cur_user\Documents\scripts\storage.ini" -ItemType File
 	}
@@ -12,17 +12,14 @@ try {
 
 	if((Get-CimInstance win32_KEYBOARD | Select-String -Pattern "USB").length -ge 2) {
 		[int]$level = 0; # Backlight level: 0 - Off, 1 - Dim, 2 - On
-		Set-Content -Path "C:\Users\$cur_user\Documents\scripts\storage.ini" -Value 0
 	} else {
 		[int]$level = 2; # Backlight level: 0 - Off, 1 - Dim, 2 - On
-		Set-Content -Path "C:\Users\$cur_user\Documents\scripts\storage.ini" -Value 2
 	}
 
 	[string]$grab_param = $args[0]
 
 	if($grab_param) {
 		[int]$level = 0;
-		Set-Content -Path "C:\Users\$cur_user\Documents\scripts\storage.ini" -Value 0
 	}
 
 	if($level -ne $file_data -Or $grab_param) {
@@ -37,4 +34,9 @@ try {
 
 		$control.SetKeyboardBackLightStatus($level, $null);
 	}
-} catch { }
+
+	Set-Content -Path "C:\Users\$cur_user\Documents\scripts\storage.ini" -Value $level
+
+	throw "exit"
+
+} catch { exit }
